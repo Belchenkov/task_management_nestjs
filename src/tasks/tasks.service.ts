@@ -1,15 +1,19 @@
 import { Injectable } from '@nestjs/common';
 
+import { Task, TaskStatus } from './task.model';
+
 @Injectable()
 export class TasksService {
-  private tasks = [
+  private tasks: Task[] = [
     {
-      id: 1,
-      title: 'Make Get Controller'
+      id: '1',
+      title: 'Make Get Controller',
+      description: 'Make Description',
+      status: TaskStatus.OPEN
     }
   ];
 
-  getAllTasks(): any {
+  getAllTasks(): Task[] {
     return this.tasks;
   }
 }
